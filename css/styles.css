@@ -11,10 +11,12 @@
    --button-focus: #188CE8;
    --adress-color: rgba(255, 255, 255, 0.6);
    --border-color: #EEEEEE
+  
    
 }
 
 /* General */
+
 
 a {
    text-decoration: none;
@@ -30,9 +32,47 @@ body {
    background-color: var(--white-color);
 }
 
+.container {
+   margin-left: auto;
+   margin-right: auto;
+   width: 1200px;
+   
+}
+
+element.style {}
+
+.features-title {
+   margin-bottom: 10px;
+   font-weight: 700;
+   font-size: 14px;
+   line-height: 1.14;
+   text-transform: uppercase;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+ul {
+   margin: 0;
+   padding: 0;
+}
+
+/* Header */
+
+.nav-section {
+   display: flex;
+   justify-content: space-around;
+   
+}
+
 /* Logo */
 
 .logo, .logo-footer {
+   margin-right: 90px;
    font-family: 'Raleway';
    font-style: normal;
    font-weight: 700;
@@ -55,25 +95,39 @@ body {
 
 /* Navigation */
 
-.header-nav {
+.header-list {
    font-weight: 500;
    font-size: 14px;
    line-height: 1.14;
    letter-spacing: 0.02em;
-   
+}
+
+.main-nav {
+   display: flex;
+   align-items: center;
+}
+
+.nav-list {
+   margin-top: 32px;
+   margin-bottom: 32px;
+   display: flex;
+}
+
+.nav-list .item + .item {
+   margin-left: 50px;
 }
 
 
-.nav-list {
+.nav-link {
    color: var(--title-text-color);
 }
 
-.nav-list:hover,
-.nav-list:focus {
+.nav-link:hover,
+.nav-link:focus {
    color: var(--accent-color);
 }
 
-.nav-list.current {
+.nav-link.current {
    color: var(--accent-color);
 }
 
@@ -91,37 +145,40 @@ body {
 /* HERO */
 
 .hero-section {
+   margin-bottom: 94px;
+
    background-color: var(--dark-bg-color);
-   width: 1600px;
+   text-align: center;
    height: 600px;
 }
 
-.slogan {
-  
+.hero-title {
+   margin-top: 0;
+   margin-bottom: 30px;
+   margin-left: auto;
+   margin-right: auto;
+   padding-top: 200px;
+   max-width: 696px;
+
    font-weight: 900;
    font-size: 44px;
    line-height: 1.36;
-   text-align: center;
    letter-spacing: 0.06em;
    text-transform: uppercase;
    color: var(--white-color);
+   
 }
 
 .button {
+   width: 216px;
+   height: 50px;
    cursor: pointer;
    font-family: inherit;
    font-weight: 700;
    font-size: 16px;
    line-height: 1.87;
-   align-items: center;
-   text-align: center;
    letter-spacing: 0.06em;
    color: var(--white-color);
-   position: absolute;
-   width: 216px;
-   height: 50px;
-   left: 692px;
-   top: 430px;
    background: var(--accent-color);
    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
    border-radius: 4px;
@@ -148,7 +205,19 @@ body {
    margin: -1px;
 }
 
+.features-section {
+   margin-bottom: 94px;
+   display: flex;
+   
+}
+
+
+
 .features-title {
+   margin-top: 0;
+   margin-bottom: 10px;
+   width: 270px;
+
    color: var(--title-text-color);
    font-weight: 700;
    font-size: 14px;
@@ -157,13 +226,21 @@ body {
    text-transform: uppercase;
 }
 
+
 .features-text {
+   width: 270px;
+
    font-size: 14px;
    line-height: 1.71;
    letter-spacing: 0.03em;
+
 }
 
-.work-title, .team-title{
+.features-section .list + .list {
+   margin-left: 30px;
+}
+
+.work-title, .team-title {
    color: var(--title-text-color);
    font-weight: 700;
    font-size: 36px;
@@ -172,17 +249,55 @@ body {
    letter-spacing: 0.03em;
 }
 
+/* Чим ми займаємося */
+
+
+.work-title {
+   margin-bottom: 50px;
+}
+
+.work-cards {
+   display: flex;
+   margin-bottom: 94px;
+}
+
+.card:not(:last-child) {
+   margin-right: 30px;
+}
+
 /* Наша команда */
 
 .team-section {
    background-color: var(--secondary-bg-color);
 }
+.team-title {
+   padding-top: 94px;
+   margin-bottom: 50px;
+}
+.team-cards {
+   display: flex;
+   padding-bottom: 94px;
+}
 
 .team-card {
+   text-align: center;
+   height: 368px;
    background-color: var(--white-color);
+   box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12),
+      0px 1px 1px rgba(0, 0, 0, 0.14),
+      0px 2px 1px rgba(0, 0, 0, 0.2);
+      border-radius: 0px 0px 4px 4px;
+}
+
+
+.team-card:not(:last-child) {
+   margin-right: 30px;
 }
 
 .text-about {
+   margin-top: 30px;
+   margin-bottom: 10px;
+
    color: var(--title-text-color);
    font-weight: 500;
    font-size: 16px;
@@ -191,6 +306,7 @@ body {
 }
 
 .team-text {
+   margin-bottom: 30px;
    font-size: 16px;
    line-height: 1.18;
    letter-spacing: 0.03em;
@@ -199,11 +315,17 @@ body {
 /* Футер */
 
 .footer-section {
+   height: 252px;
+   padding-top: 60px;
+   padding-bottom: 60px;
    background-color: var(--dark-bg-color);
-   
 }
 
+
 .adress-link {
+   display: flex;
+   margin-top: 20px;
+   margin-bottom: 9px;
    color: var(--white-color);
    font-style: normal;
    font-size: 14px;
@@ -216,6 +338,7 @@ body {
 }
 
 .footer-list {
+   display: flex;
    color: var(--adress-color);
    font-style: normal;
    font-size: 14px;
@@ -223,11 +346,16 @@ body {
    letter-spacing: 0.03em;
 }
 
+.footer-tel {
+   margin-top: 9px;
+}
+
 .footer-list:hover, .footer-list:focus {
    color: var(--accent-color);
 }
 
 /* Portfolio */
+
 
 .portfolio-buttons {
    font-family: inherit;
