@@ -15,9 +15,6 @@
    --button-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1),
       0px 1px 2px rgba(0, 0, 0, 0.08),
       0px 2px 2px rgba(0, 0, 0, 0.12);
-
-   --card-set-gap: 30px;
-  
    
 }
 
@@ -47,7 +44,10 @@ body {
    
 }
 
-
+img {
+   display: block;
+   max-width: 100%;
+}
 
 
 h1,
@@ -56,36 +56,47 @@ h3,
 h4,
 h5,
 h6,
-p,
+p {
+   margin: 0;
+
+}
+
 ul {
    margin: 0;
    padding: 0;
 }
 
-.section {
+section {
    padding-top: 94px;
    padding-bottom: 94px;
 }
 
 /* Header */
 
+.header-section {
+   border-bottom: 1px solid #ECECEC;
+}
+
+
 .nav-section {
    display: flex;
    justify-content: space-between;
-   border-bottom: 1px solid #ECECEC;
    
 }
 
 /* Logo */
 
 .logo, .logo-footer {
-   margin-right: 90px;
    font-family: 'Raleway';
    font-style: normal;
    font-weight: 700;
    font-size: 26px;
    line-height: 1.19;
    letter-spacing: 0.03em;
+}
+
+.logo {
+   margin-right: 90px;
 }
 
 .first-logo {
@@ -115,8 +126,6 @@ ul {
 }
 
 .nav-list {
-   margin-top: 32px;
-   margin-bottom: 32px;
    display: flex;
 }
 
@@ -127,6 +136,9 @@ ul {
 
 .nav-link {
    color: var(--title-text-color);
+   display: block;
+   padding: 32px 0;
+
 }
 
 .nav-link:hover,
@@ -141,6 +153,8 @@ ul {
 
 .nav-contacts {
    color: var(--primary-text-color);
+   display: block;
+   padding: 32px 0;
    
 }
 
@@ -154,7 +168,7 @@ ul {
 .hero-section {
    background-color: var(--dark-bg-color);
    text-align: center;
-   height: 600px;
+   padding: 200px 0;
 }
 
 .hero-title {
@@ -162,7 +176,6 @@ ul {
    margin-bottom: 30px;
    margin-left: auto;
    margin-right: auto;
-   padding-top: 200px;
    max-width: 696px;
 
    font-weight: 900;
@@ -175,8 +188,8 @@ ul {
 }
 
 .button {
-   width: 216px;
-   height: 50px;
+   min-width: 216px;
+   padding: 10px 32px;
    cursor: pointer;
    font-family: inherit;
    font-weight: 700;
@@ -286,7 +299,6 @@ ul {
 
 .team-card {
    text-align: center;
-   height: 368px;
    background-color: var(--white-color);
    box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12),
       0px 1px 1px rgba(0, 0, 0, 0.14),
@@ -300,7 +312,7 @@ ul {
 }
 
 .text-about {
-   margin-top: 30px;
+   
    margin-bottom: 10px;
 
    color: var(--title-text-color);
@@ -311,10 +323,14 @@ ul {
 }
 
 .team-text {
-   margin-bottom: 30px;
+   
    font-size: 16px;
    line-height: 1.18;
    letter-spacing: 0.03em;
+}
+
+.team-text-box {
+   padding: 30px 0;
 }
 
 /* Футер */
@@ -328,13 +344,10 @@ ul {
 
 
 .adress-link {
-   display: flex;
-   margin-top: 20px;
-   margin-bottom: 9px;
    color: var(--white-color);
    font-style: normal;
    font-size: 14px;
-   line-height: 1.71;
+   line-height: 1.71;      animation: alternate ;
    letter-spacing: 0.03em;
 }
 
@@ -343,7 +356,6 @@ ul {
 }
 
 .footer-list {
-   display: flex;
    color: var(--adress-color);
    font-style: normal;
    font-size: 14px;
@@ -351,13 +363,19 @@ ul {
    letter-spacing: 0.03em;
 }
 
-.footer-tel {
-   margin-top: 9px;
-}
 
 .footer-list:hover, .footer-list:focus {
    color: var(--accent-color);
 }
+
+.footer-adress-list {
+   margin-top: 20px;
+}
+
+.footer-adress-list .item + .item {
+   margin-top: 9px;
+}
+
 
 /* Portfolio */
 
@@ -369,6 +387,7 @@ ul {
 }
 
 .portfolio-button {
+   padding: 6px 22px;
    cursor: pointer;
    min-width: 73px;
    font-family: inherit;
@@ -402,10 +421,6 @@ ul {
 }
 
 .project-title {
-   padding-top: 20px;
-   padding-right: 24px;
-   padding-bottom: 4px;
-   padding-left: 24px;
    font-weight: 700;
    font-size: 18px;
    line-height: 2;
@@ -414,10 +429,7 @@ ul {
 }
 
 .project-caption {
-   padding-right: 24px;
-   padding-bottom: 20px;
-   padding-left: 24px;
-   font-weight: 400;
+   
    font-size: 16px;
    line-height: 1.88;
    letter-spacing: 0.03em;
@@ -426,18 +438,20 @@ ul {
 
 
 .pf-card {
-   margin-top: var(--card-set-gap);
-   margin-left: var(--card-set-gap);
    background: var(--white-color);
-   flex-basis: calc(100% / 3 - 30px);
-   border-bottom: 1px solid #EEEEEE;
-   
+
 }
 
 
 .portfolio-cards {
-   margin-top: calc(-1 * var(--card-set-gap));
-   margin-left: calc(-1 * var(--card-set-gap));
    display: flex;
    flex-wrap: wrap;
+   gap: 30px;
+}
+
+.pf-card-text {
+   padding: 20px 24px;
+   border-right: 1px solid #EEEEEE;
+   border-bottom: 1px solid #EEEEEE;
+   border-left: 1px solid #EEEEEE;
 }
